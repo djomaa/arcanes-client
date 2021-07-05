@@ -1,21 +1,61 @@
-import { io, Socket } from 'socket.io-client';
+import * as SClient from 'socket.io-client';
+import { IMapData } from './types';
 
-class CSocketService {
-  socket: Socket = {} as Socket;
+enum PLAYER_EVENT {
+  MAP = 'MAP',
+}
 
-  constructor(readonly url: string) {
+interface IResultSuccess<T> {
+  status: 'SUCCESS';
+  result: T;
+}
 
-  }
-
-  public connect (hash: string) {
-    this.socket = io(this.url, { auth: { hash } });
-  }
-
-  // disconnect - used when unmounting
-  public disconnect (): void {
-    this.socket.disconnect();
+interface IResultError {
+  status: 'ERROR',
+  error: {
+    name: string;
+    message: string;
+    details?: Record<string, string>;
   }
 }
 
-export const SocketService = new CSocketService('localhost:4001');
-SocketService.connect('qwe1');
+type IResult<T = any> = IResultSuccess<T> | IResultError;
+
+export type MapData = [];
+
+const URL = 'ws://localhost:4001';
+
+class Socket {
+  o: SClient.Socket;
+
+  get connected() {
+    return this.o ? this.o.connected : false;
+  }
+
+  constructor(token: string) {
+    this.o = SClient.io(URL, { auth: { token } });
+
+  }
+
+  // disconnect - used when unmounting
+  public disconnect(): void {
+    this.o.disconnect();
+  }
+
+  getMap() {
+    return this.request<IMapData>(PLAYER_EVENT.MAP);
+  }
+
+  private request<T>(event: string): Promise<T> {
+    return new Promise((resolve, reject) => this.o.emit(event, (result: IResult<T>) => {
+      if (result.status === 'SUCCESS') {
+        resolve(result.result);
+      } else {
+        reject(result.error);
+      }
+    }));
+  }
+
+}
+
+export const socket = new Socket('0x111');

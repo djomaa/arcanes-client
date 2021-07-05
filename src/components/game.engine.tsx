@@ -1,9 +1,9 @@
-import { Map } from './map';
+import { GameMap } from './game-map';
 
 export function GameEngine() {
     return (
         <div>
-            <Map/>
+            <GameMap/>
         </div>
     );
 }
