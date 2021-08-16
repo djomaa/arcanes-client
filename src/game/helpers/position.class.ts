@@ -2,8 +2,9 @@ type X = number;
 type Y = number;
 type InTuple = [X, Y]
 type InObject = { x: X, y: Y }
+type InString = string;
 
-export type PositionLike = Position | InTuple | InObject;
+export type PositionLike = Position | InTuple | InObject | InString;
 
 export class Position {
   readonly x: X;
@@ -12,7 +13,9 @@ export class Position {
 
   public constructor(...args: InTuple | [PositionLike]) {
     const [x, y] = args;
-    if (x instanceof Position) {
+    if (typeof x === 'string') {
+      [this.x, this.y] = Position.fromKey(x);
+    } else if (x instanceof Position) {
       this.x = x.x;
       this.y = x.y;
     } else if (Array.isArray(x)) {
@@ -41,6 +44,7 @@ export class Position {
       })
     }
   }
+  
 
   toString() {
     return `(${this.x};${this.y})`;
@@ -52,6 +56,20 @@ export class Position {
 
   get key(): string {
     return `${this.x}:${this.y}`;
+  }
+
+  static fromKey(str: string): Position {
+    const parts = str.split(':');
+    if (parts.length !== 2) {
+      throw new Error('failed to parse pos');
+    }
+    const [sX, xY] = parts;
+    const x = Number(sX);
+    const y = Number(xY);
+    if (Number.isNaN(x) || Number.isNaN(y)) {
+      throw new Error('NaN pos');
+    }
+    return new Position(x, y);
   }
 
 }

@@ -16,6 +16,10 @@ module.exports = {
                 use: 'ts-loader',
                 exclude: /node_modules/,
             },
+            {
+              test: /\.css$/i,
+              use: ["style-loader", "css-loader"],
+            },
         ],
     },
     resolve: {
@@ -43,6 +47,7 @@ module.exports = {
         contentBase: path.join(__dirname, 'dist'),
         // keep port in sync with VS Code launch.json
         port: 3000,
+        // host: 'http://0.0.0.0:3000',
         // Hot-reloading, the sole reason to use webpack here <3
         hot: true,
         writeToDisk: true,

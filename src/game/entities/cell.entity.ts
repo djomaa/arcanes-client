@@ -9,35 +9,15 @@ interface ICellProps extends IEntityProps {
   obstacles: IObstacle[];
 }
 
-@Interactive
-export class Cell extends BaseEntity<ICellProps, Container> {
+export class Cell extends Entity {
 
-  createObject() {
-    const cellTexture = this.game.loader.get(this.props.tile.path);
-
-    const cell = new Sprite(cellTexture);
-    cell.addChild(cell);
-    for (const obstacle of this.props.obstacles) {
-      const obstacleTexture = this.game.loader.get(obstacle.tile.path);
+  constructor(game: Game, props: ICellProps) {
+    super(game, props);
+    for (const obstacle of props.obstacles) {
+      const obstacleTexture = this.game.loader.getTile(obstacle.tile.path);
       const obstacleSprite = new Sprite(obstacleTexture);
-      cell.addChild(obstacleSprite);
+      this.object.addChild(obstacleSprite);
     }
-    return cell;
-  }
-
-  @Interaction(ACTION.MOUSE_OVER)
-  onMouseOver() {
-    this.object.alpha = 0.5;
-  }
-
-  @Interaction(ACTION.MOUSE_OUT)
-  onMouseOut() {
-    this.object.alpha = 1;
-  }
-
-  @Interaction(ACTION.CLICK)
-  onClick() {
-    this.game.socket.move(this.position);
   }
 
 }

@@ -10,8 +10,11 @@
     "devDependencies": {
         "clean-webpack-plugin": "^3.0.0",
         "copy-webpack-plugin": "5.1.1",
+        "css-loader": "5.2.7",
+        "fgraphics": "^0.0.27",
         "html-webpack-plugin": "4.0.4",
         "prettier": "2.0.4",
+        "style-loader": "2.0.0",
         "ts-loader": "6.2.2",
         "typescript": "3.8.3",
         "webpack": "4.42.1",
@@ -20,6 +23,10 @@
     },
     "dependencies": {
         "@pixi/tilemap": "^3.2.1",
+        "fconsole": "^0.0.47",
+        "pixi-filters": "^4.1.4",
+        "pixi-projection": "^0.4.2",
+        "pixi-spine": "^3.0.8",
         "pixi.js": "6",
         "reflect-metadata": "^0.1.13",
         "socket.io-client": "^4.1.3"

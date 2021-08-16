@@ -10,11 +10,14 @@ export interface IEntityProps {
   position: PositionLike;
 }
 
-export abstract class Entity extends BaseEntity<IEntityProps, Sprite> {
+export abstract class Entity extends BaseEntity {
+  object: Sprite;
 
-  createObject() {
-    const texture = this.game.loader.get(this.props.tile.path);
-    return new Sprite(texture);
+  constructor(game: Game, props: IEntityProps) {
+    super(game, props);
+    const texture = this.game.loader.getTile(props.tile.path);
+    this.object = new Sprite(texture);
+    this.updateObjectPosition();
   }
   
 }

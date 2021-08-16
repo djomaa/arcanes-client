@@ -12,7 +12,16 @@ export interface ITile {
   path: string;
 }
 
+export interface ISpine {
+  skin: string;
+  path: string;
+}
 export interface IObstacle {
+  tile: ITile;
+}
+
+export interface ITeam {
+  id: number;
   tile: ITile;
 }
 
@@ -28,6 +37,12 @@ export interface IMatrixElement {
   items: IItem[];
 }
 
+
+export interface IPlayer {
+  id: number;
+  position: PosTuple;
+  team: ITeam;
+}
 export interface IMapData {
   size: PosTuple;
   cellsData: ICell[];

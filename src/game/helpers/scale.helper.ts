@@ -12,10 +12,10 @@ function scale(spritesCount: number, resolution: number) {
   return scale;
 }
 
-function squareScale(size: Position, resolution: Position) {
+export function squareScale(size: Position, resolution: Position) {
   const xScale = scale(size.x, resolution.x);
   const yScale = scale(size.y, resolution.y);
-  return Math.min()
+  return Math.min(xScale, yScale);
 }
 
 export function resize(app: Application) {
@@ -38,14 +38,14 @@ export function resize(app: Application) {
 
   app.renderer.resize(vpw, vph);
 
-  // const wid: number = window.innerWidth;
-  // const hei: number = window.innerHeight;
-  // const SIZE = {
-  //   X: 7,
-  //   Y: 9,
-  // };
-  // const scaleX = scale(SIZE.X, width);
-  // const scaleY = scale(SIZE.Y, height);
-  // console.log(scaleX, scaleY);
-  // app.stage.scale.set(Math.min(scaleX, scaleY));
+  const wid: number = window.innerWidth;
+  const hei: number = window.innerHeight;
+  const SIZE = {
+    X: 7,
+    Y: 9,
+  };
+  const scaleX = scale(SIZE.X, width);
+  const scaleY = scale(SIZE.Y, height);
+  console.log(scaleX, scaleY);
+  app.stage.scale.set(Math.min(scaleX, scaleY));
 }

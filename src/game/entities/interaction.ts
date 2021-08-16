@@ -22,14 +22,14 @@ interface IInteractable {
   new(...args: any): any;
 }
 // TODO: fix extends classes
-export function Interactive<T extends object>(target: T): T {
+export function Interactive<T extends typeof BaseEntity>(target: T): T {
   // @ts-ignore
   return class extends target {
     constructor(...args: any[]) {
       super(args[0], args[1]);
       const map = getMetadata<IMap<this>>(KEY, target);
       // @ts-ignore
-      console.log('this.object', this.object)
+      // console.log('this.object', this.object)
       // @ts-ignore
       this.object.interactive = true;
       if (map) {

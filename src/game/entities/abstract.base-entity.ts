@@ -1,19 +1,15 @@
 import { DisplayObject, Sprite, Texture } from "pixi.js";
 import { ITile } from '../../services/socket.types';
+import { SPRITE_SIZE } from '../../config';
 import { Game } from "../game";
 import { Position, PositionLike } from "../helpers/position.class";
-const SIZE = 256;
 
 export interface IBaseEntityProps {
   position: PositionLike;
 }
 
-export abstract class BaseEntity<
-  TProps extends IBaseEntityProps = IBaseEntityProps,
-  TObj extends DisplayObject = DisplayObject
-> {
-  abstract createObject(): TObj;
-  object: TObj;
+export abstract class BaseEntity {
+  abstract object: DisplayObject;
   _position: Position;
 
   get position() {
@@ -26,13 +22,11 @@ export abstract class BaseEntity<
   }
 
   updateObjectPosition() {
-    this.object.position.set(this.position.x * SIZE, this.position.y * SIZE);
+    this.object.position.set(this.position.x * SPRITE_SIZE, this.position.y * SPRITE_SIZE);
   }
   
-  constructor(public game: Game, public props: TProps) {
+  constructor(protected game: Game, props: IBaseEntityProps) {
     this._position = new Position(props.position);
-    this.object = this.createObject();
-    this.updateObjectPosition();
   }
   
 }
