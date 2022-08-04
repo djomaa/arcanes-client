@@ -23,7 +23,6 @@
     },
     "dependencies": {
         "@pixi/tilemap": "^3.2.1",
-        "fconsole": "^0.0.47",
         "pixi-filters": "^4.1.4",
         "pixi-projection": "^0.4.2",
         "pixi-spine": "^3.0.8",

@@ -405,34 +405,10 @@
   resolved "https://registry.yarnpkg.com/@types/component-emitter/-/component-emitter-1.2.10.tgz#ef5b1589b9f16544642e473db5ea5639107ef3ea"
   integrity sha512-bsjleuRKWmGqajMerkzox19aGbscQX5rmmvvXl3wlIp5gMG1HgkiwPxsN5p070fBDKTNSPgojVbuY1+HWMbFhg==
 
-"@types/createjs-lib@*":
-  version "0.0.29"
-  resolved "https://registry.yarnpkg.com/@types/createjs-lib/-/createjs-lib-0.0.29.tgz#fae82e3ba8606663b190e789cec7d9c728fc41d7"
-  integrity sha1-+uguO6hgZmOxkOeJzsfZxyj8Qdc=
-
-"@types/createjs@0.0.29":
-  version "0.0.29"
-  resolved "https://registry.yarnpkg.com/@types/createjs/-/createjs-0.0.29.tgz#4d19b0feaa38252dcd79d78a38a4cc6df3f181fc"
-  integrity sha1-TRmw/qo4JS3NedeKOKTMbfPxgfw=
-  dependencies:
-    "@types/createjs-lib" "*"
-    "@types/easeljs" "*"
-    "@types/preloadjs" "*"
-    "@types/soundjs" "*"
-    "@types/tweenjs" "*"
-
 "@types/earcut@^2.1.0":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@types/earcut/-/earcut-2.1.1.tgz#573a0af609f17005c751f6f4ffec49cfe358ea51"
   integrity sha512-w8oigUCDjElRHRRrMvn/spybSMyX8MTkKA5Dv+tS1IE/TgmNZPqUYtvYBXGY8cieSE66gm+szeK+bnbxC2xHTQ==
-
-"@types/easeljs@*":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@types/easeljs/-/easeljs-1.0.1.tgz#4537f7201d11c4e24af923667dd895ca5c000b6c"
-  integrity sha512-mu4oIs+2CbN60Vgq8DSt7aXR2I0tV9K2ev/ZIPlkyE5UvQ+xIvw8D3NDB4dnGFkvHN303faYcETIhuvNDm6siQ==
-  dependencies:
-    "@types/createjs-lib" "*"
-    "@types/tweenjs" "*"
 
 "@types/glob@^7.1.1":
   version "7.1.4"
@@ -441,16 +417,6 @@
   dependencies:
     "@types/minimatch" "*"
     "@types/node" "*"
-
-"@types/gsap@^1.20.2":
-  version "1.20.2"
-  resolved "https://registry.yarnpkg.com/@types/gsap/-/gsap-1.20.2.tgz#038d0e81a8dd50b9b6894f34f3cd4045f71c62b8"
-  integrity sha512-i9nUsnS32+VTgoX5IlaCYukJpCoB3c6h3bZvO67aIRdb3z8NFTWgeUDpQutLyb1ujowp6nw37qLQNvEowqq8yw==
-
-"@types/howler@^2.1.0":
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/@types/howler/-/howler-2.2.3.tgz#236ff8ba2da2ed25b0b0ab959ad2f15effc93dff"
-  integrity sha512-rzIE56NmGh7t8LdZT/zuBMa9iZvwqVmB65gNhwNLtrGEIHdWkEDp1fVmoM/zctR4UJZFe0uP01AmPuPzOwhecA==
 
 "@types/html-minifier-terser@^5.0.0":
   version "5.1.2"
@@ -472,21 +438,6 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.3.2.tgz#655432817f83b51ac869c2d51dd8305fb8342e16"
   integrity sha512-jJs9ErFLP403I+hMLGnqDRWT0RYKSvArxuBVh2veudHV7ifEC1WAmjJADacZ7mRbA2nWgHtn8xyECMAot0SkAw==
 
-"@types/preloadjs@*":
-  version "0.6.32"
-  resolved "https://registry.yarnpkg.com/@types/preloadjs/-/preloadjs-0.6.32.tgz#12cff7c7f92e3838a780d438ce49c8cec981830d"
-  integrity sha1-Es/3x/kuODingNQ4zknIzsmBgw0=
-  dependencies:
-    "@types/createjs-lib" "*"
-
-"@types/soundjs@*":
-  version "0.6.28"
-  resolved "https://registry.yarnpkg.com/@types/soundjs/-/soundjs-0.6.28.tgz#cf748e90dd78f66c3f54fab41536f60a42c8c002"
-  integrity sha512-K3ktwPvYfQrH+qGEe1tgxC5o4rJC7CVxQmL9Cz9tgVq0oW99PmPfRp1F7YXELibCvV3lieD4E0sUZvnDEKWaPg==
-  dependencies:
-    "@types/createjs-lib" "*"
-    "@types/preloadjs" "*"
-
 "@types/source-list-map@*":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@types/source-list-map/-/source-list-map-0.1.2.tgz#0078836063ffaf17412349bba364087e0ac02ec9"
@@ -496,13 +447,6 @@
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/@types/tapable/-/tapable-1.0.8.tgz#b94a4391c85666c7b73299fd3ad79d4faa435310"
   integrity sha512-ipixuVrh2OdNmauvtT51o3d8z12p6LtFW9in7U79der/kwejjdNchQC5UMn5u/KxNoM7VHHOs/l8KS8uHxhODQ==
-
-"@types/tweenjs@*":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@types/tweenjs/-/tweenjs-1.0.4.tgz#4e283c7d441aef92d27e24d62628cc82155d53ee"
-  integrity sha512-UnGcZRjGYz2w+2LB/70QkzWjtqOcTu4Nxa/Cy9YZ4I8HU44kcayNgbXZYMQu4ll7z+1GP7r1+viqLKNv7+Mrzw==
-  dependencies:
-    "@types/createjs-lib" "*"
 
 "@types/uglify-js@*":
   version "3.13.1"
@@ -1904,11 +1848,6 @@ eventemitter3@^1.2.0:
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-1.2.0.tgz#1c86991d816ad1e504750e73874224ecf3bec508"
   integrity sha1-HIaZHYFq0eUEdQ5zh0Ik7PO+xQg=
 
-eventemitter3@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-2.0.3.tgz#b5e1079b59fb5e1ba2771c0a993be060a58c99ba"
-  integrity sha1-teEHm1n7XhuidxwKmTvgYKWMmbo=
-
 eventemitter3@^3.1.0:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-3.1.2.tgz#2d3d48f9c346698fce83a85d7d664e98535df6e7"
@@ -2054,26 +1993,12 @@ faye-websocket@^0.11.3:
   dependencies:
     websocket-driver ">=0.5.1"
 
-fconsole@^0.0.47:
-  version "0.0.47"
-  resolved "https://registry.yarnpkg.com/fconsole/-/fconsole-0.0.47.tgz#1a5923bfd367441e9b3d0c45eddbf76cf4fe3bca"
-  integrity sha512-kU8ifr4yWWYRQjF7FZ+XCxxfKy2XlJeBen6AXq7Li5Ot1rqatpWkgGWfIF6arWwwo72B54pZ1u2WmYEgO0GlFw==
-  dependencies:
-    fsuite "0.x"
-
 fcore@0.0.45:
   version "0.0.45"
   resolved "https://registry.yarnpkg.com/fcore/-/fcore-0.0.45.tgz#5ad4a718682d17287028b359ad57c350632064ea"
   integrity sha1-WtSnGGgtFyhwKLNZrVfDUGMgZOo=
   dependencies:
     eventemitter3 "^1.2.0"
-
-fcore@0.x:
-  version "0.0.61"
-  resolved "https://registry.yarnpkg.com/fcore/-/fcore-0.0.61.tgz#cd05db316d5dc9a1ede0a1ac09cf74d3988342f7"
-  integrity sha512-cix3Jr7FhywcyQlw+hscDcXWQO5pZQsjP04d9OoevPYsz6niApppEXuoWcw/XjILN5lMbumSPqi35deBkFtPEg==
-  dependencies:
-    eventemitter3 "^2.0.3"
 
 fgraphics@^0.0.27:
   version "0.0.27"
@@ -2218,17 +2143,6 @@ fsevents@~2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
-
-fsuite@0.x:
-  version "0.0.40"
-  resolved "https://registry.yarnpkg.com/fsuite/-/fsuite-0.0.40.tgz#7a5b12fffdb3ab5e6ba3452fd4ef804ef9bc315b"
-  integrity sha512-tELCYeBRNEgeCwigW3MydFv/iVYgaE2ILPAjaArubBguI7CQdZxZtjIAK43MOqg+7cWpImb7roNJ2R57gcu2fQ==
-  dependencies:
-    "@types/createjs" "0.0.29"
-    "@types/gsap" "^1.20.2"
-    "@types/howler" "^2.1.0"
-    fcore "0.x"
-    webfontloader "^1.6.28"
 
 function-bind@^1.1.1:
   version "1.1.1"
@@ -4959,11 +4873,6 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   integrity sha512-O84QOnr0icsbFGLS0O3bI5FswxzRr8/gHwWkDlQFskhSPryQXvrTMxjxGP4+iWYoauLoBvfDpkrOauZ+0iZpDA==
   dependencies:
     minimalistic-assert "^1.0.0"
-
-webfontloader@^1.6.28:
-  version "1.6.28"
-  resolved "https://registry.yarnpkg.com/webfontloader/-/webfontloader-1.6.28.tgz#db786129253cb6e8eae54c2fb05f870af6675bae"
-  integrity sha1-23hhKSU8tujq5UwvsF+HCvZnW64=
 
 webpack-cli@3.3.11:
   version "3.3.11"

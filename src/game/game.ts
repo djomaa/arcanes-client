@@ -8,6 +8,7 @@ import { AssetLoader, CAssetLoader } from '../services/loader.service';
 import { Battle } from './components/battle/battle.component';
 import { Spine } from 'pixi-spine';
 import { Position } from './helpers/position.class';
+import { GameView } from './components/player.backup/player.component';
 
 function log(...args: any[]) {
   console.log(...args);
@@ -17,7 +18,7 @@ export class Game {
   app: Application;
   map: GameMap;
   loader: CAssetLoader;
-  gameView: Battle;
+  gameView: any;
 
   constructor(
     public socket: Socket,
@@ -34,9 +35,14 @@ export class Game {
       Math.floor(this.app.view.width / 2),
       this.app.view.height,
     );
+    // const 
     this.loader = AssetLoader;
     this.map = new GameMap(this, mapResolution);
-    this.gameView = new Battle(this, mapResolution);
+    // this.gameView = new Battle(this, mapResolution);
+    this.gameView = new GameView(this, mapResolution)
+    console.log("🚀 ~ file: game.ts ~ line 43 ~ Game ~ mapResolution", mapResolution)
+    this.gameView.stage.position.set(0, 0);
+    console.log('SETTT');
     
 
     this.app.stage.addChild(this.gameView.stage);
